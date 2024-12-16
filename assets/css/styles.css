@@ -1,0 +1,275 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --dark-bg: #1a1a1a;
+    --darker-bg: #121212;
+    --text-color: #ffffff;
+    --accent-color: #9c7c38;
+    --heading-font: 'Raleway', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    position: relative;
+    background: none;
+    line-height: 1.6;
+    font-weight: 300;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background image setup */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/images/cemetery.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px) brightness(0.3);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation */
+nav {
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: rgba(26, 26, 26, 0.6);
+}
+
+.hero h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Map Section */
+.map-section {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.search-container {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#searchForm {
+    display: flex;
+    gap: 10px;
+}
+
+#search {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#searchForm button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+#searchForm button:hover {
+    background-color: #45a049;
+}
+
+.map-container {
+    flex: 1;
+    height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.grave-info-box {
+    margin-top: 20px;
+}
+
+.grave-details p {
+    color: #000000;
+    margin: 8px 0;
+}
+
+.grave-info h3 {
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.grave-info {
+    color: #000000;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .map-section {
+        flex-direction: column;
+    }
+    
+    .search-container {
+        flex: none;
+        width: 100%;
+    }
+    
+    .map-container {
+        height: 400px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.no-results {
+    color: #666;
+    text-align: center;
+    padding: 10px;
+}
+
+.error {
+    color: #dc3545;
+    text-align: center;
+    padding: 10px;
+}
+
+.grave-info {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.grave-info h3 {
+    color: white;
+    margin-top: 0;
+}
+
+.grave-details p {
+    color: white;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.grave-details strong {
+    color: white;
+}
+
+.date-value {
+    color: white;
+}
+
+.no-results, .error {
+    color: white;
+}
+
+.search-container h3 {
+    color: white;
+    margin-top: 0;
+}
+
+.grave-info h3 {
+    color: white;
+    margin-top: 0;
+}
+
+h3 {
+    color: white;
+}
