@@ -1,0 +1,30 @@
+-- Drop existing tables and recreate them
+DROP TABLE IF EXISTS graves;
+DROP TABLE IF EXISTS admins;
+
+-- Create admins table
+CREATE TABLE admins (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create graves table
+CREATE TABLE graves (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    latitude DECIMAL(10, 8) NOT NULL,
+    longitude DECIMAL(11, 8) NOT NULL,
+    birth_date DATE,
+    death_date DATE,
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert test admin
+INSERT INTO admins (username, password) VALUES ('admin123', 'admin123');
+
+-- Insert test grave
+INSERT INTO graves (name, latitude, longitude, notes) 
+VALUES ('John Doe', 16.411633262870357, 120.57508914689474, 'Test grave');
