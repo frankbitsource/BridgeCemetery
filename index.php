@@ -34,7 +34,8 @@ require_once 'includes/db.php';
     <!-- Map Section -->
     <section class="map-section">
         <div class="search-container">
-            <h3>Search Graves</h3>
+            <h3>Search Graves: 
+                <br>(First Name/Middle Name/Last Name)</h3>
             <form id="searchForm">
                 <input type="text" id="search" placeholder="Enter exact name...">
                 <button type="submit">Search</button>
